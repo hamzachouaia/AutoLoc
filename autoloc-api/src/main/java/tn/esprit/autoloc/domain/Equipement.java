@@ -20,4 +20,8 @@ public class Equipement {
 
     @Column(nullable = false, length = 100)
     private String libelle;
+
+    @ManyToOne
+    @JoinColumn(name = "id_vehicule")
+    private Vehicule vehicule;
 }
