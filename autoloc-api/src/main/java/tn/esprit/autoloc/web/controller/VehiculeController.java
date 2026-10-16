@@ -17,18 +17,18 @@ public class VehiculeController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Vehicule add(@RequestBody Vehicule vehicule) {
-        return vehiculeService.add(vehicule);
+    public Vehicule create(@RequestBody Vehicule vehicule) {
+        return vehiculeService.create(vehicule);
     }
 
     @GetMapping
-    public List<Vehicule> retrieveAll() {
-        return vehiculeService.retrieveAll();
+    public List<Vehicule> findAll() {
+        return vehiculeService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Vehicule retrieveById(@PathVariable Long id) {
-        return vehiculeService.retrieveById(id);
+    public Vehicule findById(@PathVariable Long id) {
+        return vehiculeService.findById(id);
     }
 
     @PutMapping("/{id}")
@@ -38,7 +38,7 @@ public class VehiculeController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
-        vehiculeService.delete(id);
+    public void deleteById(@PathVariable Long id) {
+        vehiculeService.deleteById(id);
     }
 }
